@@ -12,10 +12,12 @@
         <h1>Quiz App</h1>
         <div class="question" id="question"></div>
         <div class="options" id="options"></div>
-        <button onclick="checkAnswer()">Submit</button>
+        <button id="previousButton" onclick="previousQuestion()">Previous</button>
+        <button id="nextButton" onclick="nextQuestion()">Next</button>
+        <button id="submitButton" onclick="submitQuiz()" style="display: none;">Submit</button>
+        <button id="restartButton" onclick="restartQuiz()" style="display: none;">Restart</button>
         <div class="feedback" id="feedback"></div>
     </div>
-
     <script src="quiz.js">
        
     </script>
