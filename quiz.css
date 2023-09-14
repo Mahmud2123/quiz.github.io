@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,8 +12,8 @@ body {
 .quiz-container {
     max-width: 600px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 30px;
     text-align: center;
 }
@@ -38,19 +38,23 @@ h1 {
 
 .option {
     display: block;
-    margin-bottom: 14px;
-    font-size: 22px;
+    margin-bottom: 12px;
+    font-size: 18px;
     color: #555;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.option:hover {
+    background-color: #3498db;
+    color: #fff;
 }
 
 label {
     cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-input[type="radio"] {
-    margin-right: 10px;
 }
 
 .feedback {
@@ -60,24 +64,34 @@ input[type="radio"] {
 }
 
 .feedback.correct {
-    color: #4CAF50;
+    color: #2ecc71;
 }
 
 .feedback.incorrect {
-    color: #FF5733;
+    color: #e74c3c;
 }
 
 button {
-    background-color: #007BFF;
+    background-color: green;
     color: #fff;
     border: none;
-    padding: 12px 24px;
+    padding: 12px 0; /* Fixed height to make buttons equal */
+    width: 120px; /* Fixed width to make buttons equal */
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
     transition: background-color 0.3s;
+    margin-right: 10px; /* Add margin to the right of the "Previous" button */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
+}
+#previousButton{
+    float: left;
+    background: red;
+}
+#nextButton {
+    float: right;
+    background: blue;
 }
