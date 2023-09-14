@@ -1,31 +1,51 @@
 const questions = [
     {
-        question: "Who is the current VC of BASUG?",
-        correctAnswer: "a"
+        question: "Who is the current chief of justices of Nigeria?",
+        options: [
+        " Ibrahim  ukkasha", 
+        " Ibrahim Tanko Muhammad", 
+        " Ibrahim Tanko Hassan"
+    ],
+        correctAnswer: 1 // Index of the correct option
     },
     {
-        question: "Who is the class rep for the computer science department?",
-        correctAnswer: "b"
+        question: "Which planet is known as the Red Planet?",
+        options: ["Mars", "Venus", "Earth"],
+        correctAnswer: 0
     },
     {
-        question: "Who is your crush?",
-        correctAnswer: "c"
+    question: " In Nigeria, democracy day is now celebrated on.",
+    options: ["December 1st", "Jume 12th", "Janauary 2nd"],
+    correctAnswer: 1
+    },
+    {
+        question: "What is the largest mammal in the world?",
+        options: ["Elephant", "Blue Whale", "Giraffe"],
+        correctAnswer: 1
     }
-    // Add more questions here
+    // Add more questions with different options here
 ];
 
 const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
 const feedbackElement = document.getElementById("feedback");
 const buttonElement = document.querySelector("button");
 
 let currentQuestion = 0;
 
 function displayQuestion() {
-    questionElement.textContent = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
+    const currentQuestionData = questions[currentQuestion];
+    questionElement.textContent = `Question ${currentQuestion + 1}: ${currentQuestionData.question}`;
     feedbackElement.textContent = "";
-    const options = document.querySelectorAll('input[name="answer"]');
-    options.forEach(option => {
-        option.checked = false;
+    optionsElement.innerHTML = "";
+
+    currentQuestionData.options.forEach((option, index) => {
+        const optionLabel = document.createElement("label");
+        optionLabel.innerHTML = `
+            <input type="radio" name="answer" value="${index}">
+            ${option}
+        `;
+        optionsElement.appendChild(optionLabel);
     });
 }
 
@@ -37,7 +57,8 @@ function checkAnswer() {
         return;
     }
 
-    if (selectedAnswer.value === questions[currentQuestion].correctAnswer) {
+    const currentQuestionData = questions[currentQuestion];
+    if (parseInt(selectedAnswer.value) === currentQuestionData.correctAnswer) {
         feedbackElement.textContent = "Correct! Well done.";
         feedbackElement.classList.add("correct");
     } else {
