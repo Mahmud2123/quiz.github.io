@@ -48,7 +48,6 @@ const questions = [
                 options: ["December 1st", "Jume 12th", "Janauary 2nd"],
                 correctAnswer: 1
                 },
-    // Add more questions with different options here
 ];
 
 const questionElement = document.getElementById("question");
@@ -102,7 +101,7 @@ function checkAnswer() {
     if (userAnswers[currentQuestion] === currentQuestionData.correctAnswer) {
         feedbackElement.textContent = "Correct! Well done.";
         feedbackElement.classList.add("correct");
-        userScore++; // Increment the user's score
+        userScore++; // Increasing the user's score
     } else {
         feedbackElement.textContent = "Wrong answer. Try again.";
         feedbackElement.classList.add("incorrect");
@@ -146,4 +145,4 @@ function restartQuiz() {
     displayQuestion();
 }
 
-displayQuestion(); // Initial display of the first question
+displayQuestion();
