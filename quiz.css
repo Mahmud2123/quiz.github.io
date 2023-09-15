@@ -75,13 +75,13 @@ button {
     background-color: green;
     color: #fff;
     border: none;
-    padding: 12px 0; /* Fixed height to make buttons equal */
-    width: 120px; /* Fixed width to make buttons equal */
+    padding: 12px 0; 
+    width: 120px; 
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
     transition: background-color 0.3s;
-    margin-right: 10px; /* Add margin to the right of the "Previous" button */
+    margin-right: 10px; 
 }
 
 button:hover {
